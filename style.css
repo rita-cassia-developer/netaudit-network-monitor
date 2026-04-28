@@ -52,12 +52,24 @@ header h1 {
 .card:hover {
     transform: translateY(-5px);
 }
-
-.card h3 {
+.card h2 {
     margin-top: 0;
     color: var(--primary);
     font-size: 1.1rem;
 }
+
+/* Garante que o label invisível para acessibilidade não apareça */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
 
 .ip {
     font-family: 'Courier New', Courier, monospace;

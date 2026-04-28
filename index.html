@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>NetAudit Monitor</h1>
-        <p>Status da Infraestrutura em Tempo Real</p>
+        <p>Status da Infraestrutura em Tempo Real (SLA & GRC)</p>
     </header>
 
     <main>
@@ -17,53 +17,62 @@
             <button id="refresh-btn">Verificar Status da Rede (Ping)</button>
         </div>
 
-        <section class="dashboard-grid">
-            <!-- Card 1: Firewall -->
+        <!-- Seção de Dashboard -->
+        <section class="dashboard-grid" aria-label="Painel de Ativos">
             <div class="card" id="card-1">
-                <h3>Firewall Principal</h3>
+                <h2>Firewall Principal</h2>
                 <p class="ip">IP: 10.0.0.1</p>
                 <div class="status-box">
                     <span class="indicator"></span>
-                    <span class="label">Verificando...</span>
+                    <span class="label">Aguardando...</span>
                 </div>
-            </article>
+            </div>
 
-            <!-- Card 2: Servidor ERP -->
             <div class="card" id="card-2">
-                <h3>Servidor ERP</h3>
+                <h2>Servidor ERP</h2>
                 <p class="ip">IP: 192.168.1.50</p>
                 <div class="status-box">
                     <span class="indicator"></span>
-                    <span class="label">Verificando...</span>
+                    <span class="label">Aguardando...</span>
                 </div>
-            </article>
+            </div>
 
-            <!-- Card 3: Link Internet -->
             <div class="card" id="card-3">
-                <h3>Link Dedicado (ISP)</h3>
+                <h2>Link Internet (ISP)</h2>
                 <p class="ip">IP: 200.150.10.1</p>
                 <div class="status-box">
                     <span class="indicator"></span>
-                    <span class="label">Verificando...</span>
+                    <span class="label">Aguardando...</span>
                 </div>
-            </article>
-            </section>
-            <section class="ip-tool">
-                <h2>Validador de Endereçamento IPv4</h2>
-                <div class="tool-box">
-                <input type="text" id="ip-input" placeholder="Ex: 192.168.0.1">
-        <button id="calc-btn">Analisar IP</button>
-        <div id="ip-result" class="tool-result"></div>
-    </div>
-</section>
+            </div>
+        </section>
 
-        <section class="log-container">
-            <h2>Log de Eventos (Auditoria de Redes)</h2>
+        <!-- Ferramenta de IP -->
+        <section class="ip-tool" aria-labelledby="tool-title">
+            <h2 id="tool-title">Auditoria de Endereçamento IPv4</h2>
+            <div class="tool-box">
+                <p>Valide se o IP é Privado (LAN) ou Público (WAN) e sua Classe de Rede.</p>
+                <div class="input-group">
+                    <label for="ip-input" class="sr-only">Digite o endereço IP</label>
+                    <input type="text" id="ip-input" placeholder="Ex: 192.168.1.1">
+                    <button id="calc-btn">Analisar IP</button>
+                </div>
+                <div id="ip-result" class="tool-result"></div>
+            </div>
+        </section>
+
+        <!-- Log de Auditoria -->
+        <section class="log-container" aria-labelledby="log-title">
+            <h2 id="log-title">Log de Eventos (Disponibilidade)</h2>
             <ul id="event-log">
-                <li>Sistema iniciado. Aguardando verificação...</li>
+                <li>Sistema pronto para monitoramento.</li>
             </ul>
         </section>
     </main>
+
+    <footer>
+       
+    </footer>
 
     <script src="script.js"></script>
 </body>

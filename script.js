@@ -16,7 +16,7 @@ document.getElementById('refresh-btn').addEventListener('click', function() {
             const indicator = card.querySelector('.indicator');
             const label = card.querySelector('.label');
             const ip = card.querySelector('.ip').textContent;
-            const deviceName = card.querySelector('h3').textContent;
+            const deviceName = card.querySelector('h2').textContent;
             
             // Lógica de Redes: Simula probabilidade de 80% Online e 20% queda (instabilidade)
             const isOnline = Math.random() > 0.2;
