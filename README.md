@@ -4,7 +4,7 @@ Uma aplicação de **NOC (Network Operations Center)** simplificada, desenvolvid
 
 ## 🔗 Links Úteis
 🚀 [Acesse o Dashboard ao vivo aqui](https://rita-cassia-developer.github.io/netaudit-network-monitor/)
-📂 [Confira o repositório do código]()
+📂 [Confira o repositório do código](https://github.com/rita-cassia-developer/netaudit-network-monitor)
 
 ---
 
@@ -18,7 +18,7 @@ Este dashboard foi criado para demonstrar a aplicação de conceitos de **Redes 
 - **Gestão de Incidentes:** Visualização rápida de status (Online/Offline) facilitando a tomada de decisão rápida.
 
 ## 🛠️ Tecnologias e Conceitos de Redes
-- **HTML5/CSS3:** Layout moderno em estilo Dashboard Corporativo (Enterprise Design).
+- **HTML5/CSS3:** Layout moderno em estilo Dashboard Corporativo.
 - **JavaScript:** Lógica assíncrona para simulação de latência de rede.
 - **Modelo OSI:** Foco em conhecimentos da **Camada 3 (Rede)**.
 - **SLA (Service Level Agreement):** Monitoramento focado em manter a alta disponibilidade dos serviços.
@@ -29,4 +29,4 @@ Este dashboard foi criado para demonstrar a aplicação de conceitos de **Redes 
 - **Segurança de Código:** Implementação de manipulação segura de DOM para exibição dos logs de auditoria.
 
 ---
-*Projeto desenvolvido por [Rita de Cássia Calixto](https://github.com) para o portfólio de Gestão de TI.*
+*Projeto desenvolvido por Rita de Cássia Calixto para o portfólio de Desenvolvedora Front-end e Gestora de TI.*
