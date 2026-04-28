@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetAudit - Monitoramento de Redes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>NetAudit Monitor</h1>
+        <p>Status da Infraestrutura em Tempo Real</p>
+    </header>
+
+    <main>
+        <div class="actions">
+            <button id="refresh-btn">Verificar Status da Rede (Ping)</button>
+        </div>
+
+        <section class="dashboard-grid">
+            <!-- Card 1: Firewall -->
+            <div class="card" id="card-1">
+                <h3>Firewall Principal</h3>
+                <p class="ip">IP: 10.0.0.1</p>
+                <div class="status-box">
+                    <span class="indicator"></span>
+                    <span class="label">Verificando...</span>
+                </div>
+            </article>
+
+            <!-- Card 2: Servidor ERP -->
+            <div class="card" id="card-2">
+                <h3>Servidor ERP</h3>
+                <p class="ip">IP: 192.168.1.50</p>
+                <div class="status-box">
+                    <span class="indicator"></span>
+                    <span class="label">Verificando...</span>
+                </div>
+            </article>
+
+            <!-- Card 3: Link Internet -->
+            <div class="card" id="card-3">
+                <h3>Link Dedicado (ISP)</h3>
+                <p class="ip">IP: 200.150.10.1</p>
+                <div class="status-box">
+                    <span class="indicator"></span>
+                    <span class="label">Verificando...</span>
+                </div>
+            </article>
+            </section>
+            <section class="ip-tool">
+                <h2>Validador de Endereçamento IPv4</h2>
+                <div class="tool-box">
+                <input type="text" id="ip-input" placeholder="Ex: 192.168.0.1">
+        <button id="calc-btn">Analisar IP</button>
+        <div id="ip-result" class="tool-result"></div>
+    </div>
+</section>
+
+        <section class="log-container">
+            <h2>Log de Eventos (Auditoria de Redes)</h2>
+            <ul id="event-log">
+                <li>Sistema iniciado. Aguardando verificação...</li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
