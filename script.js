@@ -1,28 +1,23 @@
+// --- FUNÇÃO DO BOTÃO DE PING ---
 document.getElementById('refresh-btn').addEventListener('click', function() {
     const cards = document.querySelectorAll('.card');
     const logList = document.getElementById('event-log');
     const btn = this;
 
-    // Desativa o botão temporariamente (Simula o tempo de resposta da rede)
     btn.disabled = true;
     btn.textContent = "Pingando ativos...";
-
-    // Limpa o log inicial para novos registros
     logList.innerHTML = "";
 
     cards.forEach((card, index) => {
-        // Simula um atraso aleatório para cada dispositivo (Redes não são instantâneas)
         setTimeout(() => {
             const indicator = card.querySelector('.indicator');
             const label = card.querySelector('.label');
             const ip = card.querySelector('.ip').textContent;
             const deviceName = card.querySelector('h2').textContent;
             
-            // Lógica de Redes: Simula probabilidade de 80% Online e 20% queda (instabilidade)
             const isOnline = Math.random() > 0.2;
             const timestamp = new Date().toLocaleTimeString();
 
-            // Atualiza o Visual do Card
             if (isOnline) {
                 indicator.className = "indicator online";
                 label.textContent = "Online - Estável";
@@ -35,17 +30,15 @@ document.getElementById('refresh-btn').addEventListener('click', function() {
                 adicionarLog(`[${timestamp}] ALERT: Time-out no ${deviceName} (${ip}). Possível queda de serviço.`, "danger");
             }
 
-            // Se for o último card, reativa o botão
             if (index === cards.length - 1) {
                 btn.disabled = false;
                 btn.textContent = "Verificar Status da Rede (Ping)";
             }
-
-        }, index * 600); // Cada card "responde" com 600ms de diferença
+        }, index * 600);
     });
 });
 
-// Função para criar o Log de Auditoria
+// --- FUNÇÃO DO LOG DE AUDITORIA ---
 function adicionarLog(mensagem, tipo) {
     const logList = document.getElementById('event-log');
     const novoItem = document.createElement('li');
@@ -55,16 +48,16 @@ function adicionarLog(mensagem, tipo) {
         novoItem.style.color = "var(--danger)";
         novoItem.style.fontWeight = "bold";
     }
-    
-    logList.prepend(novoItem); // Adiciona no topo da lista (mais recente primeiro)
+    logList.prepend(novoItem);
 }
-// --- LÓGICA DA CALCULADORA DE IP (ADICIONAR ABAIXO) ---
+
+// --- FUNÇÃO DA CALCULADORA DE IP ---
 document.getElementById('calc-btn').addEventListener('click', function() {
     const ipInput = document.getElementById('ip-input');
     const resultDiv = document.getElementById('ip-result');
     const ip = ipInput.value.trim();
     
-    const regexIP = /^(25[0-5]|2[0-4][0-9]|?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|?[0-9][0-9]?)$/;
+    const regexIP = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
 
     if (!regexIP.test(ip)) {
         resultDiv.textContent = "Erro: Digite um IPv4 válido (ex: 192.168.0.1).";
