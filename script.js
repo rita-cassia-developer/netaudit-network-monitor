@@ -58,3 +58,42 @@ function adicionarLog(mensagem, tipo) {
     
     logList.prepend(novoItem); // Adiciona no topo da lista (mais recente primeiro)
 }
+// --- LÓGICA DA CALCULADORA DE IP (ADICIONAR ABAIXO) ---
+document.getElementById('calc-btn').addEventListener('click', function() {
+    const ipInput = document.getElementById('ip-input');
+    const resultDiv = document.getElementById('ip-result');
+    const ip = ipInput.value.trim();
+    
+    const regexIP = /^(25[0-5]|2[0-4][0-9]|?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|?[0-9][0-9]?)$/;
+
+    if (!regexIP.test(ip)) {
+        resultDiv.textContent = "Erro: Digite um IPv4 válido (ex: 192.168.0.1).";
+        resultDiv.style.color = "var(--danger)";
+        return;
+    }
+
+    const partes = ip.split('.');
+    const primeiroOcteto = parseInt(partes[0]);
+    const segundoOcteto = parseInt(partes[1]);
+
+    let classe = "";
+    if (primeiroOcteto <= 127) classe = "A";
+    else if (primeiroOcteto <= 191) classe = "B";
+    else if (primeiroOcteto <= 223) classe = "C";
+    else classe = "D/E (Reservada)";
+
+    let ePrivado = false;
+    if (primeiroOcteto === 10) ePrivado = true;
+    if (primeiroOcteto === 172 && segundoOcteto >= 16 && segundoOcteto <= 31) ePrivado = true;
+    if (primeiroOcteto === 192 && segundoOcteto === 168) ePrivado = true;
+
+    let tipo = ePrivado ? "Privado (LAN)" : "Público (WAN)";
+
+    resultDiv.innerHTML = `
+        <p><strong>Resultado da Auditoria:</strong></p>
+        <p>Classe: ${classe} | Tipo: ${tipo}</p>
+        <p><small>Indicação: Rede ${ePrivado ? 'Interna' : 'Externa (Internet)'}.</small></p>
+    `;
+    resultDiv.style.color = "var(--primary)";
+});
+
