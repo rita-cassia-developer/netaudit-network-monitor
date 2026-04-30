@@ -35,4 +35,4 @@ Este dashboard foi criado para demonstrar a aplicação de conceitos de **Redes 
 - **Segurança de Código:** Implementação de manipulação segura de DOM para exibição dos logs de auditoria.
 
 ---
-*Projeto desenvolvido por Rita de Cássia Calixto para o portfólio de Desenvolvedora Front-end e Gestora de TI.*
+*Projeto desenvolvido por Rita de Cássia Calixto(https://github.com/rita-cassia-developer) para o portfólio de Desenvolvedora Front-end e Gestora de TI.*
