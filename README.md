@@ -8,9 +8,9 @@ Uma aplicação de **NOC (Network Operations Center)** simplificada, desenvolvid
 📂 [Confira o repositório do código](https://github.com/rita-cassia-developer/netaudit-network-monitor)
 
 ---
-**Visão de Negócio:** Projetei esta solução focando na **Gestão de Ativos e Disponibilidade.** O objetivo foi simular um ambiente de **NOC**, onde a visibilidade dos **SLAs** de rede é fundamental para a tomada de decisão da gerência.
+>**Visão de Negócio:** Projetei esta solução focando na **Gestão de Ativos e Disponibilidade.** O objetivo foi simular um ambiente de **NOC**, onde a visibilidade dos **SLAs** de rede é fundamental para a tomada de decisão da gerência.
 
-**Destaque Técnico:** Uso de lógica assíncrona para simular latência de rede e monitoramento via protocolo **ICMP**, com foco em interfaces de alta performance e **Clean Code.**
+>**Destaque Técnico:** Uso de lógica assíncrona para simular latência de rede e monitoramento via protocolo **ICMP**, com foco em interfaces de alta performance e **Clean Code.**
 
 ---
 
